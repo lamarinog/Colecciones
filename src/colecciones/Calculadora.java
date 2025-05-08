@@ -23,7 +23,6 @@ public class Calculadora {
 
     public static void menu(ArrayList<Double> datos) {
         Scanner in = new Scanner(System.in);
-        Scanner inStr = new Scanner(System.in);
         System.out.println("Bienvenidos al gestor de calculador de medias.");
         int opcion = 0;
         while (opcion != 4) {
