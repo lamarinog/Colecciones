@@ -86,18 +86,24 @@ public class Peliculas {
                 borrar = true;
                 System.out.println("Se borro la pelicula");
             }
-        }if (!borrar) {
+        }
+        if (!borrar) {
             System.out.println("No se encontro la pelicula.");
         }
     }
-    
-    public static void buscar(ArrayList<Pelicula> datos, Scanner inStr){
+
+    public static void buscar(ArrayList<Pelicula> datos, Scanner inStr) {
         System.out.println("Indique el genero de peliucla que desea buscar: ");
         String genero = inStr.nextLine();
+        boolean encontrar = false;
         for (Pelicula d : datos) {
             if (genero.equalsIgnoreCase(d.getGenero())) {
                 System.out.println(d.toString());
+                encontrar = true;
             }
+        }
+        if (!encontrar) {
+            System.out.println("No se encontro pelis con este genero.");
         }
     }
 }
