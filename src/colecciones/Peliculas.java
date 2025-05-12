@@ -20,7 +20,7 @@ public class Peliculas {
     public static void menu(ArrayList<Pelicula> datos) {
         Scanner in = new Scanner(System.in);
         Scanner inStr = new Scanner(System.in);
-        System.out.println("Bienvenidos al gestor de libreria.");
+        System.out.println("Bienvenidos al gestor de peliculas.");
         int opcion = 0;
         while (opcion != 5) {
             System.out.println("1. Aniadir pelicula.");
@@ -65,11 +65,11 @@ public class Peliculas {
         System.out.println("Ingrese la duracion: ");
         int duracion = in.nextInt();
         datos.add(new Pelicula(titol, director, anio, genero, duracion));
-        System.out.println("Se agrego con exito el libro.");
+        System.out.println("Se agrego con exito la pelicula.");
     }
 
     public static void mostrar(ArrayList<Pelicula> datos) {
-        System.out.println("La lista de libros es: ");
+        System.out.println("La lista de peliculas es: ");
         for (Pelicula d : datos) {
             System.out.println(d.toString());
         }
