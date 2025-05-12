@@ -1,7 +1,6 @@
 package colecciones;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -80,9 +79,10 @@ public class Peliculas {
         System.out.println("Indique el titulo de peliucla que desea eliminar: ");
         String titulo = inStr.nextLine();
         boolean borrar = false;
-        for (Pelicula d : datos) {
-            if (titulo.equalsIgnoreCase(d.getTitulo())) {
-                datos.remove(d);
+        Iterator<Pelicula> recorrer = datos.iterator();
+        while (recorrer.hasNext()) {
+            if (titulo.equalsIgnoreCase(recorrer.next().getTitulo())) {
+                recorrer.remove();
                 borrar = true;
                 System.out.println("Se borro la pelicula");
             }
