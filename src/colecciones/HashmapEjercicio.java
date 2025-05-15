@@ -14,6 +14,7 @@ public class HashmapEjercicio {
     public static void main(String[] args) {
         diccionario();
         contador();
+        agenda();
     }
 
     public static void diccionario() {
@@ -110,7 +111,12 @@ public class HashmapEjercicio {
     public static void eliminar(HashMap<String, String> datos, Scanner inStr) {
         System.out.println("Indique el nombre de contacto que desea eliminar: ");
         String contacto = inStr.nextLine();
-        datos.remove(contacto);
+        if (datos.containsKey(contacto)) {
+            datos.remove(contacto);
+            System.out.println("Se borra contacto.");
+        } else {
+            System.out.println("No existe el contacto a eliminar");
+        }
     }
 
     public static void buscar(HashMap<String, String> datos, Scanner inStr) {
@@ -118,7 +124,7 @@ public class HashmapEjercicio {
         String nom = inStr.nextLine();
         if (datos.containsKey(nom)) {
             System.out.println(datos.get(nom));
-        }else{
+        } else {
             System.out.println("No existe el contacto a eliminar");
         }
     }
